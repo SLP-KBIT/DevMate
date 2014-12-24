@@ -1,0 +1,2 @@
+class DevprosController < ApplicationController
+end
