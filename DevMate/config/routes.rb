@@ -15,7 +15,7 @@ Rails.application.routes.draw do
      resources :logins
      resources :users, only: [:new, :create, :edit, :update, :destroy]
      resources :devpros, only: [:new, :create, :edit, :update, :index]
-     resources :topic, only: [:new, :create, :update, :index]
+     resources :topics, only: [:new, :create, :update, :index]
      resources :materials, only: [:new, :create, :show] 
 
   # Example resource route with options:
