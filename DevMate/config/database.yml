@@ -23,15 +23,15 @@ default: &default
 
 development:
   <<: *default
-  database: DevMate_development
+  database: devmate_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: DevMate
+  username: devmate
 
-  # The password associated with the postgres role (username).
+  # The password asisociated with the postgres role (username).
   #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -57,7 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: DevMate_test
+  database: devmate_test_nakashun
+  username: devmate
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: DevMate_production
-  username: DevMate
+  database: devmate_production_nakashun
+  username: devmate
   password: <%= ENV['DEVMATE_DATABASE_PASSWORD'] %>
