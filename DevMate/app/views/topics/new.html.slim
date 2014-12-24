@@ -1,0 +1,29 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    h1 資料アップロード
+    = form_tag(topics_path, :method => :post, :multipart => :true) do
+      .form-group
+        .row
+          .col-xs-2 style="text-align:right"
+            = label :topic, :name, "資料名", :class => 'control-label'
+          .col-xs-10
+            = text_field :topic, :name, :class => 'form-control'
+
+      - for content_num in 1..5 do
+        .form-group
+          .row
+            .col-xs-2 style="text-align:right"
+              = label :content, :content, "資料#{content_num}", :class => 'control-label'
+            .col-xs-8
+              = file_field :content, :content 
+      
+      .form-group
+        .row
+          .col-xs-2 style="text-align:right"
+            = label :material, :summary, "説明文", :class => 'control-label'
+          .col-xs-10
+            = text_area :material, :summary, :class => 'form-control', :rows => '12'
+      div style="text-align:right"
+        = submit_tag "アップロード", :class => 'btn btn-primary'
+
+      
