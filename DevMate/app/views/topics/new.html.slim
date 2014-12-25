@@ -15,7 +15,7 @@
             .col-xs-2 style="text-align:right"
               = label :content, :content, "資料#{content_num}", :class => 'control-label'
             .col-xs-8
-              = file_field :content, :content 
+              = file_field :content, :content, :index => content_num
       
       .form-group
         .row
@@ -23,7 +23,10 @@
             = label :material, :summary, "説明文", :class => 'control-label'
           .col-xs-10
             = text_area :material, :summary, :class => 'form-control', :rows => '12'
+
+      - @devpro.id = "1"
+      - hidden_field :topic, :devpro_id, :value => "@devpro.id"
+
       div style="text-align:right"
         = submit_tag "アップロード", :class => 'btn btn-primary'
-
       
